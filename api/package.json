@@ -1,13 +1,13 @@
 {
-  "name": "aconcagua-backend",
+  "name": "app-backend",
   "version": "1.0.1",
   "description": "Earn time with this powerful, scalable and easy to config boilerplate.",
-  "author": "gabodmc",
+  "author": "Liliani-mg",
   "license": "MIT",
-  "homepage": "https://github.com/gabodmc/nodejs-boilerplate#readme",
+  "homepage": "https://github.com/Liliani-mg/relev-app#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gabodmc/nodejs-boilerplate"
+    "url": "https://github.com/Liliani-mg/relev-app"
   },
   "scripts": {
     "start": "nodemon app.js",
