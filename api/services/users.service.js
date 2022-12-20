@@ -10,6 +10,16 @@ exports.findAll = async () => {
     }
   };
 
+  exports.getUser = async (id) => {
+    try {
+      const user = await User.findByPk(id);
+      if (!user) throw new ErrorObject("User not found", 404);
+      return user;
+    } catch (error) {
+      throw new ErrorObject(error.message, error.statusCode || 500);
+    }
+  };
+
   module.exports.createUser = async (user) => {
     try {
       const email = user.email;
