@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       allowNull: false,
     },
-    state: { type: DataTypes.ENUM, defaultValue: 'NO'},
+    state: { type: DataTypes.STRING, defaultValue: 'NO'},
     observations: DataTypes.TEXT,
     image: DataTypes.STRING,
     subcategoryId: DataTypes.INTEGER
