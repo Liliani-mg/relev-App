@@ -44,3 +44,13 @@ exports.findAll = async () => {
       throw new ErrorObject(error.message, error.statusCode || 500);
     }
   };
+
+  exports.deleteOne = async (id) => {
+    try {
+      const user = await User.findByPk(id);
+      if (!user) throw new ErrorObject("User not found", 404);
+      await User.destroy({ where: { id } });
+    } catch (error) {
+      throw new ErrorObject(error.message, error.statusCode || 500);
+    }
+  };

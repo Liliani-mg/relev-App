@@ -1,7 +1,7 @@
 const createHttpError = require("http-errors");
 const { endpointResponse } = require("../helpers/success");
 const { catchAsync } = require("../helpers/catchAsync");
-const { findAll, createUser, editUser, getUser } = require("../services/users.service");
+const { findAll, createUser, editUser, getUser, deleteOne } = require("../services/users.service");
 
 module.exports = {
   get: catchAsync(async (req, res, next) => {
@@ -75,6 +75,23 @@ module.exports = {
       const httpError = createHttpError(
         error.statusCode,
         `[Error updating user] - [/:id - PUT]: ${error.message}`
+      );
+      next(httpError);
+    }
+  }),
+  deleteOne: catchAsync(async (req, res, next) => {
+    try {
+      const id = req.params.id;
+      await deleteOne(id);
+      endpointResponse({
+        res,
+        message: "User deleted successfully",
+        code: 202,
+      });
+    } catch (error) {
+      const httpError = createHttpError(
+        error.statusCode,
+        `[Error deleting user] - [/:id - DELETE]: ${error.message}`
       );
       next(httpError);
     }
