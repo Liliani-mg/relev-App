@@ -1,0 +1,56 @@
+"use strict";
+
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert(
+      "Visits",
+      [
+        {
+          userId: 1,
+          date:new Date(),
+          state: false,
+        },
+        {
+          userId: 2,
+          date:new Date(),
+          state: true,
+        },
+        {
+          userId: 2,
+          date: new Date(),
+          state: true,
+        },
+        {
+          userId: 3,
+          date:new Date(),
+          state: true,
+        },
+        {
+          userId: 4,
+          date: new Date(),
+          state: true,
+        },
+        {
+          userId: 3,
+          date: new Date(),
+          state: true,
+        },
+        {
+          userId: 5,
+          date: new Date(),
+          state: true,
+        },
+        {
+          userId: 6,
+          date:new Date(),
+          state: true,
+        },
+      ],
+      {}
+    );
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    return await queryInterface.bulkDelete("Visits", null, {});
+  },
+};
