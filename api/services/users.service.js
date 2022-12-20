@@ -23,3 +23,14 @@ exports.findAll = async () => {
       throw new ErrorObject(error.message, error.statusCode || 500);
     }
   };
+
+  exports.editUser = async (id, props) => {
+    try {
+      const user = await User.findByPk(id);
+      if (!user) throw new ErrorObject("User not found", 404);
+      const result = await User.update(props, { where: { id } });
+      return result;
+    } catch (error) {
+      throw new ErrorObject(error.message, error.statusCode || 500);
+    }
+  };
