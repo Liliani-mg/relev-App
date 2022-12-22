@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Inspection.belongsTo(models.Visit, {foreignKey: 'visitId'})
+      Inspection.belongsTo(models.Visit)
       Inspection.hasMany(models.Category, {foreignKey: 'categoryId'})
       Inspection.hasMany(models.Subcategory, {foreignKey: 'subcategoryId'})
     }
@@ -23,9 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       allowNull: false,
     },
-    visitId: DataTypes.INTEGER,
+    //visitId: DataTypes.INTEGER,
     categoryId: DataTypes.INTEGER,
-   // subcategoryId: DataTypes.INTEGER,
+    subcategoryId: DataTypes.INTEGER,
     image: DataTypes.STRING,
     response: { type: DataTypes.BOOLEAN, defaultValue: false},
     observation: DataTypes.TEXT,

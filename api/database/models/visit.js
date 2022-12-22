@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     date: DataTypes.DATEONLY,
     state: {type: DataTypes.BOOLEAN, defaultValue: false },
-   location: DataTypes.STRING
+    location: DataTypes.STRING
   }, {
     sequelize,
     timestamps: true,
