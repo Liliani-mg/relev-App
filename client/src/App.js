@@ -1,10 +1,17 @@
 import './App.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <h1>Henry Videogames</h1>
+    <Switch>
+     
+      {/* <Route path= '*' component ={CardError}/> */}
+
+    </Switch>
     </div>
+  </BrowserRouter>
   );
 }
 
