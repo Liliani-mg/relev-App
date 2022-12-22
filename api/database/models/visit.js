@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Visit.belongsToMany(models.User, { through: 'User_Visit', foreignKey:{name: userId} });
-      Visit.belongsTo(models.Detail);
+      Visit.belongsTo(models.User, { foreignKey:'userId' });
+      //Visit.hasOne(models.Inspection);
     }
   };
   Visit.init({
     userId: DataTypes.INTEGER,
-    date: DataTypes.DATE,
+    date: DataTypes.DATEONLY,
     state: {type: DataTypes.BOOLEAN, defaultValue: false },
-   
+    location: DataTypes.STRING
   }, {
     sequelize,
     timestamps: true,

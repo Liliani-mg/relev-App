@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Inspection.belongsTo(models.Subcategory, {foreignKey: 'subcategoryId'})
-      
+      Inspection.belongsTo(models.Visit)
+      Inspection.hasMany(models.Category, {foreignKey: 'categoryId'})
+      Inspection.hasMany(models.Subcategory, {foreignKey: 'subcategoryId'})
     }
   };
   Inspection.init({
@@ -22,14 +23,16 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       allowNull: false,
     },
-    state: { type: DataTypes.ENUM, defaultValue: 'NO'},
-    observations: DataTypes.TEXT,
+    //visitId: DataTypes.INTEGER,
+    categoryId: DataTypes.INTEGER,
+    subcategoryId: DataTypes.INTEGER,
     image: DataTypes.STRING,
-    subcategoryId: DataTypes.INTEGER
+    response: { type: DataTypes.BOOLEAN, defaultValue: false},
+    observation: DataTypes.TEXT,
   }, {
     sequelize,
     timestamps:true,
-    modelName: 'Inspection',
+    modelName: 'Area',
   });
   return Inspection;
 };

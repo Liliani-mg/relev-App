@@ -5,29 +5,80 @@ module.exports = {
    
      await queryInterface.bulkInsert('Inspections', [
       {
-      state: 'SI',
-      observations: null,
+      visitId: 1,
+      categoryId: 1,
+      subcategoryId: 1,
+      observation: null,
       image: 'image.jpg',
-      subcategoryId: 1
+      response: true,
+
      },
      {
-      state: 'SI',
-      observations: null,
+       visitId: 1,
+      categoryId: 1,
+      subcategoryId: 2,
+      observation: null,
       image: 'image.jpg',
-      subcategoryId: 2
+      response: true,
+      
      },
      {
-      state: 'SI',
-      observations: null,
+      visitId: 1,
+      categoryId: 1,
+      subcategoryId: 3,
+      observation: null,
       image: null,
-      subcategoryId: 3
+      response: true,
+      
      },
      {
-      state: 'SI',
-      observations: null,
-      image: 'image.jpg',
-      subcategoryId: 4
+      visitId: 1,
+      categoryId: 1,
+      subcategoryId: 4,
+      observation: null,
+      image: null,
+      response: true,
+      
      },
+     {
+      visitId: 1,
+      categoryId: 1,
+      subcategoryId: 5,
+      observation: null,
+      image: null,
+      response: true,
+      
+     },
+     //------------------
+     {
+      visitId: 1,
+      categoryId: 2,
+      subcategoryId: 1,
+      observation: null,
+      image: 'image.jpg',
+      response: true,
+
+     },
+     {
+       visitId: 1,
+      categoryId: 2,
+      subcategoryId: 2,
+      observation: null,
+      image: 'image.jpg',
+      response: true,
+      
+     },
+     {
+      visitId: 1,
+      categoryId: 2,
+      subcategoryId: 3,
+      observation: null,
+      image: null,
+      response: true,
+      
+     },
+   
+ 
     ], {});
    
   },

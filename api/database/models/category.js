@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Category.hasMany(models.Subcategory)
+      //Category.belongsTo(models.Inspection)
     }
   };
   Category.init({
@@ -21,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false,
     },
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    description: DataTypes.TEXT
   }, {
     sequelize,
     timestamps: true,
