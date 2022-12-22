@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Category.hasMany(models.Subcategory)
+      Category.belongsToMany(models.Subcategory,{through: 'Category_Subcategory'})
       //Category.belongsTo(models.Inspection)
     }
   };
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT
   }, {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     modelName: 'Category',
   });
   return Category;
