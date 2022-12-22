@@ -44,6 +44,7 @@ exports.findAll = async () => {
       throw new ErrorObject(error.message, error.statusCode || 500);
     }
   };
+
   
   exports.getByEmail = async (email) => {
     try {
@@ -54,4 +55,5 @@ exports.findAll = async () => {
       throw new ErrorObject(error.message, error.statusCode || 500);
     }
   };
+
   

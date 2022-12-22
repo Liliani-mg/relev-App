@@ -1,4 +1,5 @@
 const express = require("express");
+
 const {
   get,
   create,
@@ -18,5 +19,6 @@ router.get("/", get);
 router.get("/:id", getOne);
 router.put("/:id", editUser);
 router.delete("/:id", isAdmin, deleteOne);
+
 
 module.exports = router;
