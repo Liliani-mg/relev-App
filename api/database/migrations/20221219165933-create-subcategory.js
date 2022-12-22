@@ -11,10 +11,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      categoryId: {
-        type: Sequelize.INTEGER,
-        references: { model: "categories", key: "id" },
-      },
+     description: Sequelize.TEXT,
       createdAt: {
         allowNull: false,
         defaultValue: Sequelize.fn("now"),

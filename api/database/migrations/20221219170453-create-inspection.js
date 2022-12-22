@@ -8,23 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name:{
-        type: Sequelize.STRING
-      },
-      state: {
-        type: Sequelize.ENUM('SI', 'NO')
-      },
-      observations: {
-        type: Sequelize.STRING
-      },
-      image: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      subcategoryId: {
+      visitId:{
         type: Sequelize.INTEGER,
-        references: { model: "subcategories", key: "id" },
+        references: {model: 'visits', key: 'id'}
       },
+      categoryId:{
+        type: Sequelize.INTEGER,
+        references: {model: 'categories', key: 'id'}
+      },
+      subcategoryId:{
+        type: Sequelize.INTEGER,
+        references: {model: 'subcategories', key: 'id'}
+      },
+      image: Sequelize.STRING,
+      response: Sequelize.BOOLEAN,
+      observation: Sequelize.TEXT,
+      
       createdAt: {
         allowNull: false,
         defaultValue: Sequelize.fn("now"),

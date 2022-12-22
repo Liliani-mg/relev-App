@@ -6,7 +6,7 @@ module.exports = {
       "Visits",
       [
         {
-          userId: 1,
+          userId: 2,
           date:new Date(),
           state: false,
         },
@@ -21,7 +21,7 @@ module.exports = {
           state: true,
         },
         {
-          userId: 3,
+          userId: 4,
           date:new Date(),
           state: true,
         },
@@ -31,7 +31,7 @@ module.exports = {
           state: true,
         },
         {
-          userId: 3,
+          userId: 5,
           date: new Date(),
           state: true,
         },
@@ -41,7 +41,7 @@ module.exports = {
           state: true,
         },
         {
-          userId: 6,
+          userId: 3,
           date:new Date(),
           state: true,
         },

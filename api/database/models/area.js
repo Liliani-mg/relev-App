@@ -1,8 +1,9 @@
+'use strict';
 const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Subcategory extends Model {
+  class Area extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -10,23 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Subcategory.belongsTo(models.Category)
-      //Subcategory.belongsTo(models.Inspection)
+      Area.hasMany(models.User)
     }
   };
-  Subcategory.init({
-    id: {
-      type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
-    },
+  Area.init({
     name: DataTypes.STRING,
     description: DataTypes.TEXT
   }, {
     sequelize,
-    timestamps:true,
-    modelName: 'Subcategory',
+    modelName: 'Area',
   });
-  return Subcategory;
+  return Area;
 };

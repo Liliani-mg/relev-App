@@ -11,9 +11,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      rol: {
-        type: Sequelize.ENUM("ADMIN", "USER"),
-        allowNull: false,
+      roleId: {
+        type: Sequelize.INTEGER,
+        references:{model: 'roles', key: 'id'}
       },
       email: {
         type: Sequelize.STRING,
@@ -23,8 +23,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      team: {
-        type: Sequelize.ENUM("TELECOMUNICACIONES", "MICROINFORMATICA"),
+      areaId: {
+        type: Sequelize.INTEGER,
+        references:{model: 'areas', key: 'id'}
       },
       createdAt: {
         allowNull: false,

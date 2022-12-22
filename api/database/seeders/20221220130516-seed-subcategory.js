@@ -7,118 +7,118 @@ module.exports = {
       [
         {
           name: 'Rack Principal (limpieza) - FOTO',
-          categoryId: 1,
-        },
+          description: null,
+       },
         {
           name: 'Rack Principal (Orden)- FOTO',
-          categoryId: 1,
+          description: null,
         },
         {
           name: 'Funcionamiento AP',
-          categoryId: 1,
+          description: null,
         },
         {
           name: 'Funcionamiento teléfono',
-          categoryId: 1,
+          description: null,
         },
         {
           name: 'UPS',
-          categoryId: 1,
+          description: null,
         },
         //----------------------------------------
-        {
-          name: 'Rack Principal (limpieza)-  FOTO',
-          categoryId: 2,
-        },
-        {
-          name: 'Rack Principal (orden) - FOTO',
-          categoryId: 2,
-        },
-        {
-          name: 'Funcionamiento AP',
-          categoryId: 2,
-        },
+        // {
+        //   name: 'Rack Principal (limpieza)-  FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Rack Principal (orden) - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Funcionamiento AP',
+        //   description: null,
+        // },
         //-------------------------------------
-        {
-          name: 'Rack Principal (limpieza) - FOTO',
-          categoryId: 3,
-        },
-        {
-          name: 'Rack Principal (orden) - FOTO',
-          categoryId: 3,
-        },
-        {
-          name: 'Funcionamiento telefono',
-          categoryId: 3,
-        },
-        {
-          name: 'Funcionamiento AP',
-          categoryId: 3,
-        },
+        // {
+        //   name: 'Rack Principal (limpieza) - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Rack Principal (orden) - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Funcionamiento telefono',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Funcionamiento AP',
+        //   description: null,
+        // },
 //----------------------------------------------
-        {
-          name: 'Rack Principal (limpieza) - FOTO',
-          categoryId: 4,
-        },
-        {
-          name: 'Rack Principal (orden) - FOTO',
-          categoryId: 4,
-        },
-        {
-          name: 'Funcionamiento telefono',
-          categoryId: 4,
-        },
-        {
-          name: 'Funcionamiento AP',
-          categoryId: 4,
-        },
+        // {
+        //   name: 'Rack Principal (limpieza) - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Rack Principal (orden) - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Funcionamiento telefono',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Funcionamiento AP',
+        //   description: null,
+        // },
         //----------
         {
           name: 'Limpiar PC - FOTO',
-          categoryId: 5,
+          description: null,
         },
         {
           name: 'Acomodar cables - FOTO',
-          categoryId: 5,
+          description: null,
         },
-        {
-          name: 'Funcionamiento telefono',
-          categoryId: 5,
-        },
+        // {
+        //   name: 'Funcionamiento telefono',
+        //   description: null,
+        // },
         //------------------------------
-        {
-          name: 'Rack Principal (limpieza) - FOTO',
-          categoryId: 6,
-        },
-        {
-          name: 'Rack Principal (orden) - FOTO',
-          categoryId: 6,
-        },
-        {
-          name: 'Funcionamiento telefono',
-          categoryId: 6,
-        },
-        {
-          name: 'Funcionamiento AP',
-          categoryId: 6,
-        },
-        {
-          name: 'Limpiar PC - FOTO',
-          categoryId: 6,
-        },
-        {
-          name: 'UPS',
-          categoryId: 6,
-        },
-        //---------------------------
-        {
-          name: 'Funcionamiento AP',
-          categoryId: 7,
-        },
+        // {
+        //   name: 'Rack Principal (limpieza) - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Rack Principal (orden) - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Funcionamiento telefono',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Funcionamiento AP',
+        //   description: null,
+        // },
+        // {
+        //   name: 'Limpiar PC - FOTO',
+        //   description: null,
+        // },
+        // {
+        //   name: 'UPS',
+        //   description: null,
+        // },
+        // //---------------------------
+        // {
+        //   name: 'Funcionamiento AP',
+        //   description: null,
+        // },
         //------------------------
         {
           name: 'Chequear visualización',
-          categoryId: 8,
+          description: null,
         },
        
       ],

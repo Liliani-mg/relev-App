@@ -4,64 +4,64 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [
       {
       name: 'Jose Balcarce',
-      rol: 'USER',
+      roleId: 2,
       email: 'joseb@mail.com',
       password: 'Hola1234',
-      team: 'TELECOMUNICACIONES',
+      areaId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'User Admin',
-      rol: 'ADMIN',
+      roleId: 1,
       email: 'admin@mail.com',
       password: 'Hola1234',
-      team: 'TELECOMUNICACIONES',
+      areaId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Juan Gomez',
-      rol: 'USER',
+      roleId:3,
       email: 'juang@mail.com',
       password: 'Hola1234',
-      team: 'MICROINFORMATICA',
+      areaId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Alan Alameda',
-      rol: 'USER',
+      roleId: 2,
       email: 'alan@mail.com',
       password: 'Hola1234',
-      team: 'MICROINFORMATICA',
+      areaId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Roberto Robles',
-      rol: 'USER',
+      roleId: 2,
       email: 'rob@mail.com',
       password: 'Hola1234',
-      team: 'MICROINFORMATICA',
+      areaId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Rosa Rosales',
-      rol: 'USER',
+      roleId: 2,
       email: 'rosar@mail.com',
       password: 'Hola1234',
-      team: 'TELECOMUNICACIONES',
+      areaId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Andres Almada',
-      rol: 'USER',
+      roleId: 2,
       email: 'andresal@mail.com',
       password: 'Hola1234',
-      team: 'MICROINFORMATICA',
+      areaId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },
