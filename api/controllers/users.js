@@ -1,6 +1,7 @@
 const createHttpError = require("http-errors");
 const { endpointResponse } = require("../helpers/success");
 const { catchAsync } = require("../helpers/catchAsync");
+const bcrypt = require("../helpers/bcrypt.helper");
 const { findAll, createUser, editUser, getUser, deleteOne } = require("../services/users.service");
 
 module.exports = {
@@ -44,7 +45,7 @@ module.exports = {
   create: catchAsync(async (req, res, next) => {
     try {
       const user = req.body;
-     
+      user.password = await bcrypt.hash(req.body.password);
       const response = await createUser(user);
    
       endpointResponse({

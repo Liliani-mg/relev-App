@@ -48,6 +48,7 @@ exports.editVisit = async (id, props) => {
     const visit = await Visit.findByPk(id);
     if (!visit) throw new ErrorObject("Visit not found", 404);
     if(visit.userId !== props.userId) throw new ErrorObject("User can't edit this visit, just the author can do that", 403);
+    if(visit.state === true) throw new ErrorObject(`The visit register in date: ${visit.date}, was closed`, 403);
     const result = await Visit.update(props, { where: { id } });
     return result;
   } catch (error) {

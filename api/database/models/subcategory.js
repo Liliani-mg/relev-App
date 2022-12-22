@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Subcategory.belongsTo(models.Category)
+      Subcategory.belongsToMany(models.Category,{through: 'Category_Subcategory'})
       //Subcategory.belongsTo(models.Inspection)
     }
   };
