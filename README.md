@@ -1,8 +1,9 @@
 # relev-app
 
-app que permite multiples perfiles (Usuario, Supervisor)
-El usuario tiene la posibilidad de crear un nuevo relevo de una visita donde deberá registrar diferentes categorias y subcategorías preestablecidas.
-Solo se puede registrar una visita por dia.
+App que permite multiples perfiles (Usuario, Supervisor). <br/>
+El usuario tiene la posibilidad de crear un nuevo relevo de una visita donde deberá registrar diferentes categorias y subcategorías preestablecidas.<br/>
+Solo se puede registrar una visita por dia.<br/>
+El diseñor responsivo permite que pueda utilizarse en dispositivos moviles o tablets <br/>
 
 
 ---
