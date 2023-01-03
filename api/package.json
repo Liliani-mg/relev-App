@@ -13,7 +13,7 @@
     "start": "nodemon app.js",
     "test": "cross-env NODE_ENV=test mocha ./test/*.js --exit",
     "pretest": "cross-env NODE_ENV=test npm run db:reset",
-    "db:reset": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all --seeders-path ./database/seeders/test",
+    "db:reset": "npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all --seeders-path ./database/seeders && npm start",
     "db:create:test": "cross-env NODE_ENV=test npx sequelize db:create"
   },
   "engines": {

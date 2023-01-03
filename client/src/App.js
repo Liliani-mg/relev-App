@@ -26,23 +26,6 @@ function App() {
         <Route path="/editvisit/:id" element={<EditVisit />} />
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<CardError />} />
-        {/* <Route path="/register" element={<Register />} />
-         <Route
-        // element={
-        //   <ProtectedRoutes
-        //     protectedEndpoints={['/backoffice']}
-        //     redirectPath="/login"
-        //   >
-        //     <ClientLayout />
-        //   </ProtectedRoutes>
-        // }
-        > 
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<ProfileContainer />} />
-          <Route path="/newvisit" element={<FormVisit />} />
-          <Route path="/backoffice" element={<BackofficeContainer />} />
-        {/* </Route> *
-        */}
       </Routes>
       <Footer />
     </BrowserRouter>
