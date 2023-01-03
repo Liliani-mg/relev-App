@@ -34,7 +34,7 @@ npm install
 ### Inicializar backend
 
 ```
- npm run db:reset
+ npm run db:start
 ```
 
 ### Instalar dependencias en ```\relev-app\client>```
