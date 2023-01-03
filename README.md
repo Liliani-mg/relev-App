@@ -12,7 +12,7 @@ El diseño responsivo permite que pueda utilizarse en dispositivos moviles o tab
   <li>Express</li>
   <li>MySQL</li>
   <li>React</li>
-  <li>React Boostrap</li>
+  <li>React-Boostrap</li>
 </ul>
 
 ---
