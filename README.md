@@ -3,8 +3,17 @@
 App que permite multiples perfiles (Usuario, Supervisor). <br/>
 El usuario tiene la posibilidad de crear un nuevo relevo de una visita donde deberá registrar diferentes categorias y subcategorías preestablecidas.<br/>
 Solo se puede registrar una visita por dia.<br/>
-El diseñor responsivo permite que pueda utilizarse en dispositivos moviles o tablets <br/>
+El diseño responsivo permite que pueda utilizarse en dispositivos moviles o tablets <br/>
 
+<h4>Tecnologias utilizadas para el desarrollo: </h4>
+<ul>
+ <li>Node js</li>
+  <li>Sequelize</li>
+  <li>Express</li>
+  <li>MySQL</li>
+  <li>React</li>
+  <li>React Boostrap</li>
+</ul>
 
 ---
 
