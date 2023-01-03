@@ -26,17 +26,17 @@ module.exports = {
           state: true,
         },
         {
-          userId: 4,
+          userId: 3,
           date: new Date(),
           state: true,
         },
         {
-          userId: 5,
+          userId: 3,
           date: new Date(),
           state: true,
         },
         {
-          userId: 5,
+          userId: 3,
           date: new Date(),
           state: true,
         },

@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Inspection.belongsTo(models.Visit)
+      Inspection.belongsTo(models.Visit, { foreignKey: 'visitId'});
       Inspection.hasMany(models.Category, {foreignKey: 'categoryId'})
       Inspection.hasMany(models.Subcategory, {foreignKey: 'subcategoryId'})
     }
-  };
+  }
   Inspection.init({
     id: {
       type: DataTypes.INTEGER,
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       allowNull: false,
     },
-    //visitId: DataTypes.INTEGER,
+    visitId: DataTypes.INTEGER,
     categoryId: DataTypes.INTEGER,
     subcategoryId: DataTypes.INTEGER,
     image: DataTypes.STRING,
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     timestamps:true,
-    modelName: 'Area',
+    modelName: 'Inspection',
   });
   return Inspection;
 };

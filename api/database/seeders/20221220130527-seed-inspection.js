@@ -69,7 +69,7 @@ module.exports = {
       
      },
      {
-      visitId: 1,
+     visitId: 1,
       categoryId: 2,
       subcategoryId: 3,
       observation: null,
@@ -83,6 +83,7 @@ module.exports = {
    
   },
 
+  
   down: async (queryInterface, Sequelize) => {
     return await queryInterface.bulkDelete("Inspections", null, {});
   }

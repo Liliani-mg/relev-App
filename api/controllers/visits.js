@@ -1,7 +1,7 @@
 const createHttpError = require("http-errors");
 const { endpointResponse } = require("../helpers/success");
 const { catchAsync } = require("../helpers/catchAsync");
-const { findAll, createVisit, editVisit, getVisit } = require("../services/visits.service");
+const { findAll, createVisit, editVisit, getVisit, getActualVisit, getUserVisit} = require("../services/visits.service");
 
 module.exports = {
   get: catchAsync(async (req, res, next) => {
@@ -78,5 +78,42 @@ module.exports = {
       );
       next(httpError);
     }
-  })
+  }),
+  getOneVisit: catchAsync(async (req, res, next) => {
+    try {
+      
+      const response = await getActualVisit();
+        
+      endpointResponse({
+        res,
+        message: "Visit retrieved successfully",
+        body: response,
+      });
+    } catch (error) {
+      const httpError = createHttpError(
+        error.statusCode,
+        `[Error retrieving visit] - [/visits/panelUser - GET]: ${error.message}`
+      );
+      next(httpError);
+    }
+  }),
+
+  getUserVisitOpen: catchAsync(async (req, res, next) => {
+    try {
+      
+      const response = await getUserVisit(req.body);
+        
+      endpointResponse({
+        res,
+        message: "Visit retrieved successfully you can edit it",
+        body: response,
+      });
+    } catch (error) {
+      const httpError = createHttpError(
+        error.statusCode,
+        `[Error retrieving visit] - [/visits/panelUser - GET]: ${error.message}`
+      );
+      next(httpError);
+    }
+  }),
 };

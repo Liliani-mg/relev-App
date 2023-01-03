@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Subcategory.belongsToMany(models.Category,{through: 'Category_Subcategory'})
-      //Subcategory.belongsTo(models.Inspection)
+      Subcategory.belongsTo(models.Inspection)
     }
   };
   Subcategory.init({

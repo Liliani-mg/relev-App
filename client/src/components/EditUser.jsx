@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 
-export default function Register() {
+export default function EditUser() {
   return (
     <Container>
       <Form>
@@ -40,7 +40,7 @@ export default function Register() {
           </FloatingLabel>
         </Form.Group>
         <Button variant="primary" type="submit">
-          Registrarme
+          Editar 
         </Button>
       </Form>
     </Container>

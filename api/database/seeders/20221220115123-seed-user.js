@@ -28,43 +28,7 @@ module.exports = {
       areaId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
-    },
-    {
-      name: 'Alan Alameda',
-      roleId: 2,
-      email: 'alan@mail.com',
-      password: 'Hola1234',
-      areaId: 1,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      name: 'Roberto Robles',
-      roleId: 2,
-      email: 'rob@mail.com',
-      password: 'Hola1234',
-      areaId: 1,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      name: 'Rosa Rosales',
-      roleId: 2,
-      email: 'rosar@mail.com',
-      password: 'Hola1234',
-      areaId: 2,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      name: 'Andres Almada',
-      roleId: 2,
-      email: 'andresal@mail.com',
-      password: 'Hola1234',
-      areaId: 2,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
+    }
   ], {});
   },
 
