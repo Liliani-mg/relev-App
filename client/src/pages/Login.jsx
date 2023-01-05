@@ -34,18 +34,6 @@ export default function Login() {
     e.preventDefault();
     login(input);
     handleRedirect("/panel");
-    // if (input.email.length === 0 || input.password.length === 0) {
-    //   alert("complete email y contraseña");
-    // } else {
-    //   login(input);
-    //   if (user) {
-    //     if (!user.roleId) {
-    //       alert("usuario o contraseña invalidos");
-    //     } else if (user.roleId != 1){
-    //       handleRedirect("/");
-    //     }
-    //   }
-    // }
   }
 
   function handleChange(e) {
@@ -88,7 +76,7 @@ export default function Login() {
         <Button
           variant="secondary"
           type="button"
-          handleClick={() => handleRedirect("/register")}
+          onClick={() => handleRedirect("/register")}
         >
           Registrarse
         </Button>

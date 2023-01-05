@@ -88,7 +88,7 @@ export default function FormVisit() {
   
   }
 
-
+const localidad = visitCR.location
 
   return (
     <Container>
@@ -100,9 +100,9 @@ export default function FormVisit() {
           onChange={handleChangeLocation}
             name="location"
             type="text"
-            placeholder="Ingresa localidad"
+            placeholder={visitCR ? localidad : "Ingresa localidad"}
           />
-          <Button type="submit">Abrir visita</Button>
+          <Button disabled={visitCR ? true : false} type="submit">Abrir visita</Button>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">

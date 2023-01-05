@@ -43,7 +43,7 @@ export default function FuncAP({ visit, catId }) {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Group className="mb-3">
             <FormGroup className="mb-3">
-              <Form.Label>Funcionamiento AP</Form.Label>
+              {/* <Form.Label>Funcionamiento AP</Form.Label> */}
               <Form.Select onChange={(e) =>{handleSelect(e)}} aria-label="Revisado Si/No">
                 <option>Revisado Si/No</option>
                 <option value={true}>

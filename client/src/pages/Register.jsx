@@ -3,26 +3,80 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+const { REACT_APP_API_URL = "http://localhost:3001" } = process.env;
+
 
 export default function Register() {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const handleRedirect = (link) => navigate(link);
+
+  const [input, setInput] = useState({
+    email: "",
+    name: "",
+    roleId: 2,
+    areaId: 0,
+    password: "",
+  });
+
+  async function register(input) {
+    console.log(input);
+    await axios
+      .post(REACT_APP_API_URL + "/users/register", input)
+      .then((response) => {
+        const respuesta = response.data;
+        localStorage.setItem("user", JSON.stringify(respuesta.body));
+        response;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    register(input);
+    console.log(user);
+    handleRedirect("/panel");
+  }
+
+  function handleChange(e) {
+    e.preventDefault();
+    const newInput = {
+      ...input,
+      [e.target.name]: e.target.value,
+    };
+    console.log(newInput)
+    setInput(newInput);
+  }
+
+  function handleArea(e) {
+    e.preventDefault();
+    const newInput = {
+      ...input,
+      areaId: e.target.value,
+    };
+    console.log(newInput)
+    setInput(newInput);
+  }
+
   return (
     <Container>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formBasic">
           <Form.Label>Equipo</Form.Label>
-          <Form.Select
-          //   value={type}
-          //   onChange={(e) => setType(e.currentTarget.value)}
-          >
+          <Form.Select onChange={(e) => handleArea(e)}>
             <option value="">Selecciona un equipo</option>
-            <option value="TELECOMUNICACIONES">Telecomunicaciones</option>
-            <option value="MICROINFORMATICA">Microinformatica</option>
-            <option value="SUPERVISOR">Supervisor</option>
+            <option name="areaId" value={1} >Telecomunicaciones</option>
+            <option  name="areaId" value={2}>Microinformatica</option>
+          
           </Form.Select>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasicname">
           <Form.Label>Nombre y Apellido</Form.Label>
-          <Form.Control type="text-muted" placeholder="Nombre y Apellido" />
+          <Form.Control onChange={(e) => handleChange(e)} name="name" type="text-muted" placeholder="Nombre y Apellido" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <FloatingLabel
@@ -30,13 +84,13 @@ export default function Register() {
             label="Direccion de email"
             className="mb-3"
           >
-            <Form.Control type="email" placeholder="nombre@ejemplo.com" />
+            <Form.Control onChange={(e) => handleChange(e)} name="email" type="email" placeholder="nombre@ejemplo.com" />
           </FloatingLabel>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <FloatingLabel controlId="floatingPassword" label="Contraseña">
-            <Form.Control type="password" placeholder="Contraseña" />
+            <Form.Control onChange={(e) => handleChange(e)} name="password"  type="password" placeholder="Contraseña" />
           </FloatingLabel>
         </Form.Group>
         <Button variant="primary" type="submit">

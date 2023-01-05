@@ -28,7 +28,7 @@ export default function PanelUser(props) {
   useEffect(() => {
     getVisit()
    console.log(visit)
-  }, [])
+  }, [props.userU, visit])
   
 
   function handleclick(e) {

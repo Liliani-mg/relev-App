@@ -49,7 +49,7 @@ export default function RackPLimpieza({ visit, catId }) {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Group className="mb-3">
             <FormGroup className="mb-3">
-              <Form.Label>Rack Principal - Limpieza</Form.Label>
+              {/* <Form.Label>Rack Principal - Limpieza</Form.Label> */}
               <Form.Select onChange={(e) =>{handleSelect(e)}} aria-label="Revisado Si/No">
                 <option>Revisado Si/No</option>
                 <option value={true}>
