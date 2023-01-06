@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -28,7 +29,9 @@ export default function Register() {
       .post(REACT_APP_API_URL + "/users/register", input)
       .then((response) => {
         const respuesta = response.data;
+        console.log(respuesta, "REGISTRO RESPUESTA");
         localStorage.setItem("user", JSON.stringify(respuesta.body));
+        handleRedirect("/panel");
         response;
       })
       .catch((error) => {
@@ -38,8 +41,8 @@ export default function Register() {
   function handleSubmit(e) {
     e.preventDefault();
     register(input);
-    console.log(user);
-    handleRedirect("/panel");
+    console.log("handle SUBMIT",user);
+    //handleRedirect("/panel");
   }
 
   function handleChange(e) {
