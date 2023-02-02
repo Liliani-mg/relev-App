@@ -9,9 +9,8 @@ function AlreadyLogin() {
 function handleclose (e){
     e.preventDefault()
     console.log();
-    localStorage.removeItem("user")
+    localStorage.clear()
     localStorage.removeItem("visit")
-    localStorage.removeItem("visits")
     navigate("/")
   }
   

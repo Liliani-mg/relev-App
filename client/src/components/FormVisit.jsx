@@ -20,6 +20,8 @@ export default function FormVisit() {
   let actualDate = new Date().toISOString();
   const dateT = actualDate.slice(0, 10);
 
+
+
   const [input, setInput] = useState({
     userId: user.id,
     date: dateT,
@@ -88,7 +90,7 @@ export default function FormVisit() {
   
   }
 
-const localidad = visitCR.location
+const localidad = visitCR?.location
 
   return (
     <Container>
@@ -101,8 +103,9 @@ const localidad = visitCR.location
             name="location"
             type="text"
             placeholder={visitCR ? localidad : "Ingresa localidad"}
+            // placeholder="Ingresa localidad"
           />
-          <Button disabled={visitCR ? true : false} type="submit">Abrir visita</Button>
+          <Button disabled={visitCR ? true : false} type="submit">{visitCR ? "Visita abierta" : "Abrir visita"}</Button>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">

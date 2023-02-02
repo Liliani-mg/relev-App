@@ -7,7 +7,7 @@ module.exports = {
     createInspection: catchAsync(async (req, res, next) => {
         try {
           const inspection = req.body;
-
+          if (req.file) inspection.image = req.file.filename;
           const response = await createInspection(inspection);
       
           endpointResponse({

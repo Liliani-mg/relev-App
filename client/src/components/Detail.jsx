@@ -1,26 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Spinner from "./Spinner1.jsx";
 const { REACT_APP_API_URL = "http://localhost:3001" } = process.env;
 
 export default function Detail({ visitA, userA }) {
   const { id } = useParams();
-
-  const visitDetail = JSON.parse(localStorage.getItem("visitDetail"));
+ const visitDetail = JSON.parse(localStorage.getItem("visitDetail"));
   const renderDate = visitDetail?.date.slice(0, 10);
 
   console.log(visitDetail);
   useEffect(() => {
     getVisitDetail(id);
-
-    return () => {
-      localStorage.removeItem("visitDetail");
-    };
-  }, []);
+    return ()=>{
+      localStorage.removeItem("visitDetail")
+    }
+  }, [visitDetail]);
 
   async function getVisitDetail(id) {
     await axios
@@ -81,8 +80,14 @@ export default function Detail({ visitA, userA }) {
   }
 
   return (
+   
     <Container>
-      <h2>
+    {
+      !visitDetail
+      ? <Spinner/>
+      : (
+        <>
+              <h2>
         {renderDate} - {visitDetail?.location}
       </h2>
       <h4> Estado: {visitDetail?.state === true ? "Cerrado" : "Abierto"}</h4>
@@ -227,6 +232,10 @@ export default function Detail({ visitA, userA }) {
           </Card.Body>
         </Card>
       )}
+      </>
+      )
+    }
+
     </Container>
   );
 }

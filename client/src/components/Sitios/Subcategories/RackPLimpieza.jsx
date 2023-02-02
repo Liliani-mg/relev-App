@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { postImage } from "../../../services/postImage";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -15,6 +16,19 @@ export default function RackPLimpieza({ visit, catId }) {
     observation: null,
   });
  
+  async function handleImageChange(e) {
+    handlePostImage(e.target.files[0]);
+  }
+  async function handlePostImage(images) {
+    const url = await postImage(images);
+    console.log(url);
+    setInput({
+      ...input,
+      image: url,
+    });
+  }
+  //res.cloudinary.com/dxsvkn4eo/image/upload//e9e3392f0c5f7a954519d7064746aa5e
+//res.cloudinary.com/CLOUD_NAME/image/upload//sezbnxko40mu1tyxa1ez.png
   async function createInspection(input) {
     await axios
       .post(REACT_APP_API_URL + "/inspection/create", input)
@@ -65,7 +79,7 @@ export default function RackPLimpieza({ visit, catId }) {
                 <Form.Control onChange={handleSelect} name="observation" as="textarea" aria-label="Observaciones" />
                 <InputGroup>
                   <Form.Label>FOTO</Form.Label>
-                  <Form.Control onChange={handleSelect} name="image" type="file" accept="image/*"></Form.Control>
+                  <Form.Control onChange={handleImageChange} name="image" type="file" accept="image/*"></Form.Control>
                 </InputGroup>
               </InputGroup>
             </FormGroup>

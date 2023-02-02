@@ -1,38 +1,14 @@
-import React from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-
-
-const { REACT_APP_API_URL = "http://localhost:3001" } = process.env;
 
 export default function PanelAdmin(props) {
   const navigate = useNavigate();
-  const visits = JSON.parse(localStorage.getItem("visits"));
 
-  async function getVisits() {
-    await axios
-      .get(`${REACT_APP_API_URL}/visits`)
-      .then((response) => {
-        const respuesta = response.data;
-        localStorage.setItem("visits", JSON.stringify(respuesta.body));
-        response;
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("error al encontrar visitas");
-      });
-  }
-
-  useEffect(() => {
-    getVisits();
-}, []);
-
-  function handleclick(e, id) {
-    e.preventDefault(e)
+  function handleclick(id) {
+    console.log(id);
     navigate(`/detailVisit/${id}`);
   }
 
@@ -50,19 +26,18 @@ export default function PanelAdmin(props) {
           </tr>
         </thead>
         <tbody>
-          {
-            visits?.map((e,i) => {
-              return (
+          {props.visits?.map((v, i) => {
+            return (
               <tr key={i}>
-                <td>{e.id}</td>
-                <td>{e.date}</td>
-                <td>{e.state === false ? "Abierta" : "Cerrada"}</td>
+                <td>{v.id}</td>
+                <td>{v.date}</td>
+                <td>{v.state === false ? "Abierta" : "Cerrada"}</td>
                 <th>
-                  <Button onClick={()=>{handleclick(e.id)}}>Detalles</Button>
+                  <Button onClick={() => handleclick(v.id)}>Detalles</Button>
                 </th>
               </tr>
-              )
-            })}
+            );
+          })}
         </tbody>
       </Table>
     </Container>
